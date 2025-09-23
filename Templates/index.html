@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Emotion AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Real-Time Emotion AI</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="webcam-container">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+            </div>
+            
+            <div id="emotionDisplay" class="emotion-display">
+                <span id="emotionText">Detecting...</span>
+                <span id="emotionEmoji"></span>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="btn">Start Camera</button>
+                <button id="stopBtn" class="btn btn-secondary" disabled>Stop Camera</button>
+                <div class="auto-detect-container">
+                    <label class="switch">
+                        <input type="checkbox" id="autoDetect" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <label for="autoDetect" class="switch-label">Auto Detect</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
